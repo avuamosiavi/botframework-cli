@@ -4,8 +4,7 @@
   "scripts": {
     "build": "lerna bootstrap --no-ci && lerna run build",
     "test": "lerna run test",
-    "coverage": "nyc npm test",
-    "coveralls": "npm run coverage",
+    "lernacoverage": "lerna run coverage",
     "upload-coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "private": true,

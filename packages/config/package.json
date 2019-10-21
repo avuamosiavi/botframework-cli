@@ -53,8 +53,8 @@
     "postpack": "rimraf oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",
     "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
-    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
-    "testveryold": "cd test/ && mocha --opts mocha.opts",
+    "coverage": "nyc npm test",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   },
   "telemetry": null
