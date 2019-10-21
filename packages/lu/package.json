@@ -61,7 +61,8 @@
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
-    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.**\"",
+    "testold": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.**\"",
+    "test": "cd test/ && mocha --opts mocha.opts",
     "version": "oclif-dev readme && git add README.md"
   },
   "nyc": {
