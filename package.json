@@ -2,7 +2,7 @@
   "name": "root",
   "version": "1.0.0",
   "scripts": {
-    "build": "lerna bootstrap --no-ci && lerna run build",
+    "build": "lerna run build && lerna bootstrap --no-ci",
     "test": "lerna run test",
     "lernacoverage": "lerna run coverage",
     "upload-coveralls": "nyc report --reporter=text-lcov | coveralls"
