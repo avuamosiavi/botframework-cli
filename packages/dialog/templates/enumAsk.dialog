@@ -4,6 +4,21 @@
     "condition":"!$**PROPERTY**",
     "actions": [
         {
+            "$type": "Microsoft.IfCondition",
+            "condition": "$lastExpectedProperty == '**PROPERTY**'",
+            "actions":[
+                {
+                    "$type": "Microsoft.SendActivity",
+                    "activity": "[Help**PROPERTY**]"   
+                }
+            ]
+        },
+        {
+            "$type": "Microsoft.SetProperty",
+            "property": "$lastExpectedProperty",
+            "value": "**PROPERTY**"
+        },
+        {
             "$type": "Microsoft.Ask",
             "activity": "[Ask**PROPERTY**]",
             "expectedProperties": [

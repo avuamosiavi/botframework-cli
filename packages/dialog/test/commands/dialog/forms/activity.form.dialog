@@ -39,6 +39,11 @@
             "type": "string",
             "$mappings":["PROPERTYNAME"], 
             "$templates":[]
+        },
+        "lastExpectedProperty":{
+            "type": "string",
+            "$mappings":["PROPERTYNAME"], 
+            "$templates":[]
         }     
     },
     "required":["Subject", "ActivityType", "StartDate"]

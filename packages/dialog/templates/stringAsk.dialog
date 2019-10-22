@@ -5,6 +5,21 @@
     "actions": [
         {
             "$type": "Microsoft.IfCondition",
+            "condition": "$lastExpectedProperty == '**PROPERTY**'",
+            "actions":[
+                {
+                    "$type": "Microsoft.SendActivity",
+                    "activity": "[Help**PROPERTY**]"   
+                }
+            ]
+        },
+        {
+            "$type": "Microsoft.SetProperty",
+            "property": "$lastExpectedProperty",
+            "value": "'**PROPERTY**'"
+        },
+        {
+            "$type": "Microsoft.IfCondition",
             "condition": "contains(turn.schema.properties['**PROPERTY**'].$mappings, 'utterance')",
             "actions":[
                 {

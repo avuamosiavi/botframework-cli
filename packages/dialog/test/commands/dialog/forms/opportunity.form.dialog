@@ -56,7 +56,12 @@
             "type": "string",
             "$mappings":["PROPERTYNAME"],  
             "$templates":[]
-        }     
+        },
+        "lastExpectedProperty":{
+            "type": "string",
+            "$mappings":["PROPERTYNAME"], 
+            "$templates":[]
+        }        
     },
     "required":["Account", "Topic", "Territory","Description","ContactEmail","ContactPhone","EstimatedCloseDate","PurchaseTimeframe"]
 }

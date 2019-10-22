@@ -71,7 +71,12 @@
             "type": "string",
             "$mappings":["PROPERTYNAME"],  
             "$templates":[]
-        }     
+        },
+        "lastExpectedProperty":{
+            "type": "string",
+            "$mappings":["PROPERTYNAME"], 
+            "$templates":[]
+        }        
     },
     "required":["HomeStreet", "HomeCity", "HomeState", "HomeZip", "HomePhone", "WorkStreet", "WorkCity", "WorkState", "WorkZip", "WorkPhone"]
 }
