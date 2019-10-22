@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "lerna run build && lerna bootstrap --no-ci",
-    "test": "lerna run test --no-bail",
-    "lernacoverage": "lerna run coverage --no-bail",
+    "test": "lerna run test --no-bail --no-ci",
+    "lernacoverage": "lerna run coverage --no-bail --no-ci",
     "upload-coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "private": true,
