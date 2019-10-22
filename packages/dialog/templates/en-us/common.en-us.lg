@@ -23,17 +23,28 @@
 # askString(property, name)
 - Enter a value for {name}
 
->>> Help messages <<<
-# helpProperty(property, name)
-- IF: {turn.schema.properties[property].enum}
-- Possible values for {name} include: \[{join(turn.schema.properties[property].enum, ',')}\]
-- ELSEIF: {property=='utterance'}
-- 
-- ELSE:
-- There is no help message for {name}
-
 # contextHelp
 - {join(foreach(dialog.expectedProperties, prop, helpProperty(prop, prop)), '\n')}
+
+# helpProperty(property, name)
+- IF: {turn.schema.properties[property].enum}
+    - Possible values for {name} include: \[{join(turn.schema.properties[property].enum, ',')}\]
+- ELSEIF: {property=='utterance'}
+    - 
+- ELSEIF: {turn.schema.properties[property][$mappings]}
+    - {mappingsHelp(turn.schema.properties[property][$mappings], name)}
+- ELSE:
+    -  There is no help message for {name}.
+
+# mappingsHelp(mappingProperties, name)
+- IF: {contains(mappingProperties, 'email')}
+    - Expecting an email address, e.g., abc@microsoft.com
+- ELSEIF: {contains(mappingProperties, 'datetime')}
+    - Expecting a date time, e.g., Oct 22, 2019
+- ELSEIF: {contains(mappingProperties, 'USSTATE')}
+    - Expecting a US state, e.g., Washington, WA
+- ELSE:
+    - There is no help message for {join(mappingProperties, ',')}.
 
 # clarifyEnum(property, name)
 - Please choose a value for {name} from \[{join(foreach(turn.dialogEvent.value.entity.value, val, bread(val)), ',')}\]
