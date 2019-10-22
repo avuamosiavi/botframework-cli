@@ -61,8 +61,9 @@
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
-    "coverage": "nyc npm test",
+    "coverageXXX": "nyc npm test",
     "test": "mocha --forbid-only \"test/**/*.test.**\"",
+    "testcoverage": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.**\"",
     "version": "oclif-dev readme && git add README.md"
   },
   "nyc": {

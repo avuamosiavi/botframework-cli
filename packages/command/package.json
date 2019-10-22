@@ -52,8 +52,9 @@
     "build": "npm install && rimraf lib && tsc -b",
     "posttest": "tsc -p test --noEmit && tslint -p test -t stylish",
     "prepublishOnly": "rimraf lib && tsc -b",
-    "coverage": "nyc npm test",
-    "test": "mocha --forbid-only \"test/**/*.test.ts\""
+    "coverageXXX": "nyc npm test",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "testcoverage": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\""
   },
   "types": "./lib/index.d.ts"
 }
