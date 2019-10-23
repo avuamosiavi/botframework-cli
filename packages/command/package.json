@@ -54,7 +54,7 @@
     "prepublishOnly": "rimraf lib && tsc -b",
     "coverageXXX": "nyc npm test",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "testcoverage": "nyc --temp-dir=\"../../.nyc_output\" --extension .ts mocha --forbid-only \"test/**/*.test.ts\""
+    "testcoverage": "nyc --temp-dir=\"../../.nyc_output/command\" --extension .ts mocha --forbid-only \"test/**/*.test.ts\""
   },
   "types": "./lib/index.d.ts"
 }

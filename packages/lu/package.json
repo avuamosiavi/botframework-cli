@@ -63,7 +63,7 @@
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "coverageXXX": "nyc npm test",
     "test": "mocha --forbid-only \"test/**/*.test.**\"",
-    "testcoverage": "nyc --temp-dir=\"../../.nyc_output\" --extension .ts mocha --forbid-only \"test/**/*.test.**\"",
+    "testcoverage": "nyc --temp-dir=\"../../.nyc_output/lu\" --extension .ts mocha --forbid-only \"test/**/*.test.**\"",
     "version": "oclif-dev readme && git add README.md"
   },
   "nyc": {

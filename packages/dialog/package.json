@@ -63,7 +63,7 @@
     "posttest": "tslint -p test -t stylish",
     "nocoverage": "nyc npm test",
     "notest": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "notestcoverage": "nyc --temp-dir=\"../../.nyc_output\" --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "notestcoverage": "nyc --temp-dir=\"../../.nyc_output/dialog\" --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   }
 }
