@@ -5,7 +5,7 @@
     "build": "lerna run build && lerna bootstrap --no-ci",
     "test": "lerna run test --no-bail --no-ci",
     "lernacoverage": "lerna run testcoverage --no-bail --no-ci",
-    "upload-coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "upload-coveralls": "nyc report | coveralls"
   },
   "private": true,
   "devDependencies": {
