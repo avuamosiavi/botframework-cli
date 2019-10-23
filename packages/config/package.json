@@ -55,7 +55,7 @@
     "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "coverageXXX": "nyc npm test",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "testcoverage": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "testcoverage": "nyc --temp-dir=\"../../.nyc_output\" --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   },
   "telemetry": null
