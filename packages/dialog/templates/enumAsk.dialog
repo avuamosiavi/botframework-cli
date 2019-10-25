@@ -9,14 +9,14 @@
             "actions":[
                 {
                     "$type": "Microsoft.SendActivity",
-                    "activity": "[Help**PROPERTY**]"   
+                    "activity": "[enumHelp('**PROPERTY**', **PROPERTY**Name())]"  
                 }
             ]
         },
         {
             "$type": "Microsoft.SetProperty",
             "property": "$lastExpectedProperty",
-            "value": "**PROPERTY**"
+            "value": "'**PROPERTY**'"
         },
         {
             "$type": "Microsoft.Ask",

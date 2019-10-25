@@ -4,8 +4,20 @@
     "intent": "Help",
     "actions": [
         {
-            "$type": "Microsoft.SendActivity",
-            "activity": "[contextHelp]"
+            "$type": "Microsoft.IfCondition",
+            "condition": "count(turn.schema.properties[$lastExpectedProperty].enum)>0",
+            "actions":[
+                {
+                    "$type": "Microsoft.SendActivity",
+                    "activity": "[enumHelp($lastExpectedProperty, $lastExpectedProperty)]"  
+                }
+            ],
+            "elseActions":[
+                {
+                    "$type": "Microsoft.SendActivity",
+                    "activity": "[mappingsHelp(turn.schema.properties[$lastExpectedProperty].$mappings, $lastExpectedProperty)]"  
+                }
+            ]
         }
     ]
 }

@@ -8,8 +8,14 @@
             "condition": "$lastExpectedProperty == '**PROPERTY**'",
             "actions":[
                 {
-                    "$type": "Microsoft.SendActivity",
-                    "activity": "[Help**PROPERTY**]"   
+                    "$type": "Microsoft.IfCondition",
+                    "condition": "!empty(turn.schema.properties['**PROPERTY**'].$mappings)",
+                    "actions":[
+                        {
+                            "$type": "Microsoft.SendActivity",
+                            "activity": "[mappingsHelp(turn.schema.properties['**PROPERTY**'].$mappings, **PROPERTY**Name())]" 
+                        }
+                    ]
                 }
             ]
         },
@@ -27,7 +33,7 @@
                     "activity": "[Ask**PROPERTY**]",
                     "expectedProperties": [
                          "utterance","**PROPERTY**"
-            ]
+                    ]
                 }
             ],
             "elseActions":[

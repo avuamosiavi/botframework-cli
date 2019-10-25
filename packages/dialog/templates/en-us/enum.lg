@@ -4,8 +4,5 @@
 # Clarify**PROPERTY**
 - [clarifyEnum('**PROPERTY**', **PROPERTY**Name())]
 
-# Help**PROPERTY**
-- [helpProperty('**PROPERTY**', **PROPERTY**Name())]
-
 # **PROPERTY**Name
 - **NAME** 
